@@ -1,0 +1,1614 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <style>
+        /* Google Font CDN Link */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        ::selection {
+            background: orange;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 100%;
+            width: 100%;
+            overflow: hidden;
+            padding: 80px 0;
+        }
+
+        .container .main-card {
+            display: flex;
+            justify-content: space-evenly;
+            width: 200%;
+            transition: 1s;
+        }
+
+        #two:checked~.main-card {
+            margin-left: -100%;
+        }
+
+        .container .main-card .cards {
+            width: calc(100% / 2 - 10px);
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 20px;
+            justify-content: space-between;
+        }
+
+        .main-card .cards .card {
+            width: calc(100% / 3 - 10px);
+            background: #fff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+            transition: all 0.4s ease;
+        }
+
+        .main-card .cards .card:hover {
+            transform: translateY(-15px);
+        }
+
+        .cards .card .content {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .cards .card .content .img {
+            height: 250px;
+            width: 250px;
+
+            padding: 3px;
+
+            margin-bottom: 14px;
+        }
+
+        .card .content .img img {
+            height: 100%;
+            width: 100%;
+
+            object-fit: cover;
+        }
+
+        .card .content .name {
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .card .content .job {
+            font-size: 20px;
+            color: orange;
+        }
+
+        .card .content .media-icons {
+            margin-top: 10px;
+            display: flex;
+
+        }
+
+        .media-icons a {
+            text-align: center;
+            line-height: 33px;
+            height: 35px;
+            width: 35px;
+            margin: 0 4px;
+            font-size: 14px;
+            color: #FFF;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            background: orange;
+            transition: all 0.3s ease;
+        }
+
+        .media-icons a:hover {
+            color: orange;
+            background-color: #fff;
+            border-color: white;
+        }
+
+        .container .button {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin: 20px;
+        }
+
+        .button label {
+            height: 15px;
+            width: 15px;
+            border-radius: 20px;
+            background: #fff;
+            margin: 0 4px;
+            cursor: pointer;
+            transition: all 0.5s ease;
+        }
+
+        .button label.active {
+            width: 35px;
+        }
+
+        #one:checked~.button .one {
+            width: 35px;
+        }
+
+        #one:checked~.button .two {
+            width: 15px;
+        }
+
+        #two:checked~.button .one {
+            width: 15px;
+        }
+
+        #two:checked~.button .two {
+            width: 35px;
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .main-card .cards .card {
+                margin: 20px 0 10px 0;
+                width: calc(100% / 2 - 10px);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .main-card .cards .card {
+                /* margin: 20px 0 10px 0; */
+                width: 100%;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#002033">
+    <link rel="icon" type="image/x-icon" href="Assets/images/WhatsApp Image 2024-04-16 at 8.05.09 AM.jpeg">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap" />
+    <link fetchpriority="medium" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap" media="print"
+        onload="this.media='all'" />
+
+    <link rel="preload" as="style" href="/Styles/PreLoadStyleSheet.css" />
+    <link fetchpriority="medium" rel="stylesheet" href="/Styles/PreLoadStyleSheet.css" media="print"
+        onload="this.media='all'" />
+
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap" />
+        <link rel="stylesheet" href="/Styles/PreLoadStyleSheet.css" />
+    </noscript>
+
+    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+    <title>RK TECH VISION</title>
+    <meta name="description" content="RK TECH VISION providing solutions for all your problems and business needs" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+
+    <meta property="og:description"
+        content="RK TECH VISION providing solutions for all your problems and business needs" />
+
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="628" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel='stylesheet' id='app-styles-css' href='style.css' type='text/css' media='all' />
+    <script type="text/javascript"
+        src="https://www.northropandjohnson.com/wp-content/themes/nj-2022/dist/header.js?ver=1712985510&#039; async=&#039;async"
+        id="header-scripts-js"></script>
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MNCCWTG');</script>
+    <!-- End: Google Tag Manager -->
+</head>
+
+<body class="page-template-default page page-id-17071" data-cf-country-code="US">
+    <script>
+        (() => {
+            const setViewport = () => {
+                const vh = window.innerHeight * 0.01;
+                document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+                const sbw = document.body ? window.innerWidth - document.body.clientWidth : 0;
+                document.documentElement.style.setProperty('--sbw', `${sbw}px`);
+            };
+
+            setViewport();
+            window.addEventListener('resize', setViewport, true);
+        })();
+    </script>
+
+    <!-- Navigation -->
+    <div class="navigation-wrapper" data-js="navmenu-items">
+        <a href="#" class="navigation-item--skip button">
+            <span class="button-label">Skip to Content</span>
+            <span class="button-effect"></span>
+        </a>
+        <div class="navigation-container">
+            <nav class="navigation-row">
+                <div class="navigation-item--logo">
+                    <a href="index.html" title="RK TECH VISION">
+                        <h1 class="title-large-alt">RK TECH VISION</h1>
+                    </a>
+                    <span class="navigation-item--logo-alt button">
+                        <span class="button-label">Homepage</span>
+                        <span class="button-effect"></span>
+                    </span>
+                    <button class="navigation-hamburger" data-js="navmenu-btn" aria-label="Expand Navigation Menu">
+                        <div class="navigation-hamburger--inner">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="navigation-item--nav navigation-item--nav-primary">
+                    <ul id="menu-header-primary" class="menu">
+                        <li id="menu-item-448"
+                            class="nav_top__buy menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-448">
+                            <a href="index.html"><i class="icon icon-name--coin icon-size--md">
+                                    <svg>
+                                        <use xlink:href="index.html">
+                                        </use>
+                                    </svg>
+                                </i>
+                                Home</a>
+                        </li>
+                        <li id="menu-item-467"
+                            class="nav_top__charter menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-467">
+                            <a href="about.html"><i class="icon icon-name--ship icon-size--md">
+                                    <svg>
+                                        <use xlink:href="about.html">
+                                        </use>
+                                    </svg>
+                                </i>
+                                About</a>
+                        </li>
+                        <li id="menu-item-473"
+                            class="nav_top__owners menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-473">
+                            <a href="servives.html"><i class="icon icon-name--person-bowtie icon-size--md">
+                                    <svg>
+                                        <use xlink:href="services.html">
+                                        </use>
+                                    </svg>
+                                </i>
+                                Services</a>
+                            <ul class="sub-menu">
+                                <li id="menu-item-17853"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17853 featured">
+                                    <a href="services.html"><i class="icon icon-name--person-bowtie icon-size--md">
+                                            <svg>
+                                                <use xlink:href="services.html">
+                                                </use>
+                                            </svg>
+                                        </i>
+                                        Services</a>
+                                </li>
+                                <li id="menu-item-476"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-476 border-top">
+                                    <a href="android.html"><i class="icon icon-name--briefcase icon-size--md">
+                                            <svg>
+                                                <use xlink:href="android.html">
+                                                </use>
+                                            </svg>
+                                        </i>
+                                        Android App Development</a>
+                                </li>
+                                <li id="menu-item-474"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-474"><a
+                                        href="ios.html"><i class="icon icon-name--ship icon-size--md">
+                                            <svg>
+                                                <use xlink:href="ios.html">
+                                                </use>
+                                            </svg>
+                                        </i>
+                                        iOS App Development</a></li>
+                                <li id="menu-item-477"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-477"><a
+                                        href="web.html"><i class="icon icon-name--dollar icon-size--md">
+                                            <svg>
+                                                <use xlink:href="web.html">
+                                                </use>
+                                            </svg>
+                                        </i>
+                                        Web Development</a></li>
+                                <li id="menu-item-475"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-475"><a
+                                        href="digital.html"><i class="icon icon-name--life-preserver icon-size--md">
+                                            <svg>
+                                                <use xlink:href="digital.html">
+                                                </use>
+                                            </svg>
+                                        </i>
+                                        Digital Marketing</a></li>
+                                <li id="menu-item-475"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-475"><a
+                                        href="aso.html"><i class="icon icon-name--life-preserver icon-size--md">
+                                            <svg>
+                                                <use xlink:href="aso.html">
+                                                </use>
+                                            </svg>
+                                        </i>
+                                        ASO</a></li>
+                                <li id="menu-item-475"
+                                    class="menu-item menu-aitem-type-post_type menu-item-object-page menu-item-475"><a
+                                        href="appmarket.html"><i class="icon icon-name--life-preserver icon-size--md">
+                                            <svg>
+                                                <use xlink:href="appmarket.html">
+                                                </use>
+                                            </svg>
+                                        </i>
+                                        App Marketing</a></li>
+                                <li id="menu-item-475"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-475"><a
+                                        href="quality.html"><i class="icon icon-name--life-preserver icon-size--md">
+                                            <svg>
+                                                <use xlink:href="quality.html">
+                                                </use>
+                                            </svg>
+                                        </i>
+                                        Quality Assurance</a></li>
+                                <li id="menu-item-475"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-475"><a
+                                        href="enter.html"><i class="icon icon-name--life-preserver icon-size--md">
+                                            <svg>
+                                                <use xlink:href="enter.html">
+                                                </use>
+                                            </svg>
+                                        </i>
+                                        Entrepreneur</a></li>
+                                <li id="menu-item-475"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-475"><a
+                                        href="investment.html"><i class="icon icon-name--life-preserver icon-size--md">
+                                            <svg>
+                                                <use xlink:href="investment.html">
+                                                </use>
+                                            </svg>
+                                        </i>
+                                        Investment</a></li>
+                                <li id="menu-item-475"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-475"><a
+                                        href="ser.html"><i class="icon icon-name--life-preserver icon-size--md">
+                                            <svg>
+                                                <use xlink:href="ser.html">
+                                                </use>
+                                            </svg>
+                                        </i>
+                                        Services</a></li>
+                                <li id="menu-item-475"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-475"><a
+                                        href="commerce.html"><i class="icon icon-name--life-preserver icon-size--md">
+                                            <svg>
+                                                <use xlink:href="commerce.html">
+                                                </use>
+                                            </svg>
+                                        </i>
+                                        E-commerce</a></li>
+                                <li id="menu-item-475" d
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-475"><a
+                                        href="artificial.html"><i class="icon icon-name--life-preserver icon-size--md">
+                                            <svg>
+                                                <use xlink:href="artificial.html">
+                                                </use>
+                                            </svg>
+                                        </i>
+                                        Artificial Intelligence</a></li>
+                            </ul>
+                        </li>
+                        <li id="menu-item-466"
+                            class="nav_top__sell menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-466">
+                            <a href="/"><i class="icon icon-name--sale-tag icon-size--md">
+                                    <svg>
+                                        <use xlink:href="/">
+                                        </use>
+                                    </svg>
+                                </i>
+                                Projects</a>
+                            <ul class="sub-menu">
+                                <li id="menu-item-17853"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17853 featured">
+                                    <a href="services.html"><i class="icon icon-name--person-bowtie icon-size--md">
+                                            <svg>
+                                                <use xlink:href="services.html">
+                                                </use>
+                                            </svg>
+                                        </i>
+                                        Services</a>
+                                </li>
+                                <li id="menu-item-476"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-476 border-top">
+                                    <a href="android.html"><i class="icon icon-name--briefcase icon-size--md">
+                                            <svg>
+                                                <use xlink:href="android.html">
+                                                </use>
+                                            </svg>
+                                        </i>
+                                        Android App Development</a>
+                                </li>
+                                <li id="menu-item-474"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-474"><a
+                                        href="ios.html"><i class="icon icon-name--ship icon-size--md">
+                                            <svg>
+                                                <use xlink:href="ios.html">
+                                                </use>
+                                            </svg>
+                                        </i>
+                                        iOS App Development</a></li>
+                                <li id="menu-item-477"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-477"><a
+                                        href="web.html"><i class="icon icon-name--dollar icon-size--md">
+                                            <svg>
+                                                <use xlink:href="web.html">
+                                                </use>
+                                            </svg>
+                                        </i>
+                                        Web Development</a></li>
+                                <li id="menu-item-475"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-475"><a
+                                        href="digital.html"><i class="icon icon-name--life-preserver icon-size--md">
+                                            <svg>
+                                                <use xlink:href="digital.html">
+                                                </use>
+                                            </svg>
+                                        </i>
+                                        Digital Marketing</a></li>
+                                <li id="menu-item-475"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-475"><a
+                                        href="aso.html"><i class="icon icon-name--life-preserver icon-size--md">
+                                            <svg>
+                                                <use xlink:href="aso.html">
+                                                </use>
+                                            </svg>
+                                        </i>
+                                        ASO</a></li>
+                                <li id="menu-item-475"
+                                    class="menu-item menu-aitem-type-post_type menu-item-object-page menu-item-475"><a
+                                        href="appmarket.html"><i class="icon icon-name--life-preserver icon-size--md">
+                                            <svg>
+                                                <use xlink:href="appmarket.html">
+                                                </use>
+                                            </svg>
+                                        </i>
+                                        App Marketing</a></li>
+                                <li id="menu-item-475"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-475"><a
+                                        href="quality.html"><i class="icon icon-name--life-preserver icon-size--md">
+                                            <svg>
+                                                <use xlink:href="quality.html">
+                                                </use>
+                                            </svg>
+                                        </i>
+                                        Quality Assurance</a></li>
+                                <li id="menu-item-475"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-475"><a
+                                        href="enter.html"><i class="icon icon-name--life-preserver icon-size--md">
+                                            <svg>
+                                                <use xlink:href="enter.html">
+                                                </use>
+                                            </svg>
+                                        </i>
+                                        Entrepreneur</a></li>
+                                <li id="menu-item-475"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-475"><a
+                                        href="investment.html"><i class="icon icon-name--life-preserver icon-size--md">
+                                            <svg>
+                                                <use xlink:href="investment.html">
+                                                </use>
+                                            </svg>
+                                        </i>
+                                        Investment</a></li>
+                                <li id="menu-item-475"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-475"><a
+                                        href="ser.html"><i class="icon icon-name--life-preserver icon-size--md">
+                                            <svg>
+                                                <use xlink:href="ser.html">
+                                                </use>
+                                            </svg>
+                                        </i>
+                                        Services</a></li>
+                                <li id="menu-item-475"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-475"><a
+                                        href="commerce.html"><i class="icon icon-name--life-preserver icon-size--md">
+                                            <svg>
+                                                <use xlink:href="commerce.html">
+                                                </use>
+                                            </svg>
+                                        </i>
+                                        E-commerce</a></li>
+                                <li id="menu-item-475" d
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-475"><a
+                                        href="artificial.html"><i class="icon icon-name--life-preserver icon-size--md">
+                                            <svg>
+                                                <use xlink:href="artificial.html">
+                                                </use>
+                                            </svg>
+                                        </i>
+                                        Artificial Intelligence</a></li>
+                            </ul>
+                        </li>
+                        <li id="menu-item-483"
+                            class="nav_top__build menu-item menu-item-type-post_type menu-item-object-page menu-item-483">
+                            <a href="team.html"><i class="icon icon-name--gear icon-size--md">
+                                    <svg>
+                                        <use xlink:href="team.html">
+                                        </use>
+                                    </svg>
+                                </i>
+                                Team</a>
+                        </li>
+                        <li id="menu-item-484"
+                            class="nav_top__crew menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-484">
+                            <a href="test.html"><i class="icon icon-name--people icon-size--md">
+                                    <svg>
+                                        <use xlink:href="test.html">
+                                        </use>
+                                    </svg>
+                                </i>
+                                Testimonials</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="navigation-item--nav navigation-item--nav-secondary">
+                    <ul id="menu-header-secondary" class="menu">
+                        <li id="menu-item-17973"
+                            class="nav_top__news menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-17973">
+                            <a href="news.html"><i class="icon icon-name--announcement icon-size--md">
+                                    <svg>
+                                        <use xlink:href="news.html">
+                                        </use>
+                                    </svg>
+                                </i>
+                                News &#038; Events</a>
+                        </li>
+                        <li id="menu-item-478"
+                            class="nav_top__company menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-478">
+                            <a href="company.html"><i class="icon icon-name--ampersand icon-size--md">
+                                    <svg>
+                                        <use xlink:href="company.html">
+                                        </use>
+                                    </svg>
+                                </i>
+                                Company</a>
+
+                        </li>
+                        <li id="menu-item-866"
+                            class="nav_top__inquire menu-item menu-item-type-post_type menu-item-object-page menu-item-866">
+                            <a href="contact.html"><i class="icon icon-name--dialouge icon-size--md">
+                                    <svg>
+                                        <use xlink:href="contact.html">
+                                        </use>
+                                    </svg>
+                                </i>
+                                Contact</a>
+                        </li>
+                    </ul>
+                    <div class="navigation-item--account">
+                    </div>
+
+                </div>
+            </nav>
+        </div>
+    </div> <!-- End: Navigation -->
+
+    <div id="g-recaptcha"></div>
+    <div class="heroLarge-wrapper" style="background-color: #FFF;">
+        <div class="heroLarge-container">
+            <div class="heroLarge-row heroLarge-row--breadcrumbs">
+            </div>
+
+            <div class="heroLarge-row heroLarge-row--media">
+                <div class="media media-image ratio-custom">
+                    <div class="media-asset" style="background-color: #FFF;">
+                        <img fetchpriority="high" title="RK Tech Vision" class="media-object"
+                            src="Assets/images/banner final.png" srcset="Assets/images/banner final.png" sizes="auto"
+                            alt="" />
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="heroLarge-row heroLarge-row--content">
+                <div class="heroLarge-title">
+                    <h1 class="heroLarge-heading title-xx-large-alt">Welcome to RK Tech Vision</h1>
+                    <p class="heroLarge-subheading title-small">All your software solutions at one place</p>
+                </div>
+
+                <div class="heroLarge-description editor">
+                    <p>Founded in 2017, RK Tech Visioin has been at the forefront of delivering innovative and tailored
+                        software solutions to meet the diverse needs of its clients. With a commitment to excellence and
+                        a passion for technology, RK Tech Vision has established itself as a leading provider of
+                        comprehensive software services.</p>
+                    <p>At RK Tech Vision, our mission is to empower businesses and organizations by leveraging
+                        cutting-edge technology to drive efficiency, productivity, and growth. We strive to deliver
+                        high-quality solutions that not only meet but exceed our clients' expectations, helping them
+                        stay ahead in today's dynamic and competitive market.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="heroLarge-bg--gradient"></div>
+
+        <div class="heroLarge-bg"></div>
+    </div>
+    <div class="bg-callout-dark bg-callout-wrapper">
+        <div class="bg-callout-bg  bg-callout-bg-blend">
+            <img class="bg-callout-bg--img lazyload" src="Assets/images/high-angle-desktop-with-laptop-copy-space.jpg">
+        </div>
+
+        <div class="bg-callout-container">
+            <div class="bg-callout-row">
+                <div class="bg-callout-card">
+                    <h2 class="bg-callout-card-heading title-xx-large-alt">RK Vision</h2>
+                    <p class="bg-callout-card-subheading title-medium">Our Selection of Quality, Pre owned vessels.</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <input type="radio" name="dot" id="one" />
+        <input type="radio" name="dot" id="two" />
+        <div class="main-card">
+            <div class="cards">
+                <div class="card">
+                    <div class="content">
+                        <div class="img">
+                            <img src="Assets/images/app development.png" alt="" />
+                        </div>
+                        <div class="details">
+                            <div class="name">Andriod Development</div>
+                            <div class="textCard_content--action">
+                                <a class="button" href="android.html">
+                                    <span class="button-label">Read more here.</span>
+                                    <span class="button-effect"></span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="content">
+                        <div class="img">
+                            <img src="Assets/images/ai1.jpg" alt="" />
+                        </div>
+                        <div class="details">
+                            <div class="name">Artificial Intelligence</div>
+                            <div class="textCard_content--action">
+                                <a class="button" href="artificial.html">
+                                    <span class="button-label">Read more here.</span>
+                                    <span class="button-effect"></span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="content">
+                        <div class="img">
+                            <img src="Assets/images/ecommerce1.jpg" alt="" />
+                        </div>
+                        <div class="details">
+                            <div class="name">E-Commerce</div>
+                            <div class="textCard_content--action">
+                                <a class="button" href="commerce.html">
+                                    <span class="button-label">Read more here.</span>
+                                    <span class="button-effect"></span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <div class="content">
+                        <div class="img">
+                            <img src="Assets/images/quality assurance.jpg" alt="" />
+                        </div>
+                        <div class="details">
+                            <div class="name">Quality Assurance</div>
+                            <div class="textCard_content--action">
+                                <a class="button" href="quality.html">
+                                    <span class="button-label">Read more here.</span>
+                                    <span class="button-effect"></span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="content">
+                        <div class="img">
+                            <img src="Assets/images/web.jpg" alt="" />
+                        </div>
+                        <div class="details">
+                            <div class="name">web Development</div>
+                            <div class="textCard_content--action">
+                                <a class="button" href="web.html">
+                                    <span class="button-label">Read more here.</span>
+                                    <span class="button-effect"></span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="content">
+                        <div class="img">
+                            <img src="Assets/images/ser1.jpg" alt="" />
+                        </div>
+                        <div class="details">
+                            <div class="name">Services</div>
+                            <div class="textCard_content--action">
+                                <a class="button" href="services.html">
+                                    <span class="button-label">Read more here.</span>
+                                    <span class="button-effect"></span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="button">
+            <label for="one" class="active one"></label>
+            <label for="two" class="two"></label>
+        </div>
+    </div>
+
+
+    <div class="bg-callout-wrapper">
+
+        <div class="bg-callout-container">
+            <div class="bg-callout-row">
+                <div class="bg-callout-card">
+                    <p class="bg-callout-card-subheading title-medium">RK TECH VISION also provide the brokidge and new
+                        developed services.</p>
+                    <div class="bg-callout-card-description editor body-medium">
+                        <p>As we forge ahead into the future, RK Tech remains steadfast in its vision to empower
+                            businesses through brokerage services and innovative solutions. By fostering collaboration,
+                            driving innovation, and embracing change, we aim to create a world where technology serves
+                            as a catalyst for growth, prosperity, and positive transformation.
+
+                            Join us on this journey as we continue to pioneer new paths, break down barriers, and
+                            redefine the possibilities of what technology can achieve</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-callout-dark bg-callout-wrapper">
+        <div class="bg-callout-bg  bg-callout-bg-blend">
+            <img class="bg-callout-bg--img lazyload" src="Assets/images/high-angle-desktop-with-laptop-copy-space.jpg">
+        </div>
+
+        <div class="bg-callout-container">
+            <div class="bg-callout-row">
+                <div class="bg-callout-card">
+                    <h2 class="bg-callout-card-heading title-xx-large-alt">ABOUT RK TECH VISION</h2>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section-wrapper textCards-wrapper">
+        <div class="section-row section-row--grid">
+            <div class="grid cols-sm-2 cols-x-sm-1 cols-3" data-js>
+                <div class="grid__inner" data-js="slider-track">
+                    <div class="grid__tray" data-js="slider-tray">
+                        <article class="textCard">
+                            <div class="textCard_inner">
+                                <div class="textCard_content">
+                                    <h3 class="textCard_content--title title-small">WHAT IS : RK TECH VISON?</h3>
+                                    <div class="textCard_content--description editor editor-small">
+                                        <p>At RK Tech Vision, we are committed to delivering tailored solutions that
+                                            meet the unique needs and challenges of our clients. Whether it's custom
+                                            software development, web and mobile app development, UI/UX design, or
+                                            strategic consulting, our services are designed to empower businesses to
+                                            thrive in today's fast-paced and competitive landscape.</p>
+
+                                    </div>
+                                    <div class="textCard_content--action">
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="textCard">
+                            <div class="textCard_inner">
+
+
+                                <div class="textCard_content">
+                                    <h3 class="textCard_content--title title-small">RK TECH VISION : GOALS</h3>
+                                    <div class="textCard_content--description editor editor-small">
+                                        <p>In line with our vision of innovation and progress, RK Tech Vision
+                                            continually develops new services to address emerging challenges and
+                                            opportunities in the market. From advanced AI-powered solutions to
+                                            revolutionary blockchain applications, we are committed to staying at the
+                                            forefront of technological advancement and delivering value-driven services
+                                            that anticipate and exceed our clients' needs. By investing in research,
+                                            development, and experimentation, we aim to push the boundaries of what's
+                                            possible and shape the future of technology in meaningful and impactful
+                                            ways.</p>
+                                    </div>
+                                    <div class="textCard_content--action">
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="textCard">
+                            <div class="textCard_inner">
+
+
+                                <div class="textCard_content">
+                                    <h3 class="textCard_content--title title-small">RK TECH VISION : ACHIEVEMENTS</h3>
+                                    <div class="textCard_content--description editor editor-small">
+                                        <p>RK Tech Vision has made significant strides in realizing its vision of
+                                            harnessing technology for positive impact and innovation. Since its
+                                            inception, RK Tech Vision has consistently pushed the boundaries of what's
+                                            possible in the realm of software solutions, fostering growth and
+                                            transformation for its clients and stakeholders.
+
+                                            One of RK Tech's Vision notable achievements has been its commitment to
+                                            delivering cutting-edge services tailored to meet the evolving needs of
+                                            businesses across various industries. Through innovative custom software
+                                            development, web and mobile app solutions, and strategic consulting, RK Tech
+                                            Vision has empowered its clients to thrive in today's competitive landscape,
+                                            driving efficiency, productivity, and success.</p>
+
+
+                                    </div>
+                                    <div class="textCard_content--action">
+                                        <a class="button" href="rktechvision.com">
+                                            <span class="button-label">Read more here.</span>
+                                            <span class="button-effect"></span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="section-row section-row--title" style="margin-top: 5%; margin-left: 2%;">
+        <div class="sectionTitle-large">
+            <div class="sectionTitle-divider"></div>
+
+            <div class="sectionTitle-heading">
+                <p class="sectionTitle-heading--label">Featured Services</p>
+            </div>
+
+        </div>
+    </div>
+    <div class="container">
+        <div class="category" style="height: 500px;">
+            <img src="Assets/images/app development.png" alt="Category Image">
+            <div class="category-info">
+                <a href="android.html">
+                    <h2>Android App Development</h2>
+                </a>
+                <p>Android app Development services provide bY RK TECH VISION</p>
+            </div>
+        </div>
+        <div class="category" style="height: 500px;">
+            <img src="Assets/images/ios.jpg" alt="Category Image">
+            <div class="category-info">
+                <a href="ios.html">
+                    <h2>iOS App Development</h2>
+                </a>
+                <p>IOS app Development services provide bY RK TECH VISION</p>
+            </div>
+        </div>
+        <div class="category" style="height: 500px;">
+            <img src="Assets/images/web-design-technology-browsing-programming-concept.jpg" alt="Category Image">
+            <div class="category-info">
+                <a href="web.html">
+                    <h2>Web Development</h2>
+                </a>
+                <p>Any type of website RK TECH VISION developed for you.</p>
+            </div>
+        </div>
+        <div class="category" style="height: 500px;">
+            <img src="Assets/images/artificial.jpg" alt="Category Image">
+            <div class="category-info">
+                <a href="artificial.html">
+                    <h2>Artificial Intelligence</h2>
+                </a>
+                <p>All AI project services provide bY RK TECH VISION</p>
+            </div>
+        </div>
+        <div class="category" style="height: 500px;">
+            <img src="Assets/images/ecommerce.jpeg" alt="Category Image">
+            <div class="category-info">
+                <a href="commerce.html">
+                    <h2>E-Commerce</h2>
+                </a>
+                <p>All types of E-Commerce website developed bY RK TECH VISION</p>
+            </div>
+        </div>
+        <div class="category" style="height: 500px;">
+            <img src="Assets/images/services.jpg" alt="Category Image">
+            <div class="category-info">
+                <a href="ser.html">
+                    <h2>Services</h2>
+                </a>
+                <p>All Tech services are available at RK TECH VISION</p>
+            </div>
+        </div>
+    </div>
+    <div class="category" style="height: 500px;">
+        <img src="Assets/images/digital-marketing-with-icons-business-people.jpg" alt="Category Image">
+        <div class="category-info">
+            <a href="digital.html">
+                <h2>Digital Marketing</h2>
+            </a>
+            <p>RK TECH VISIONI provide differet digital marketing services.</p>
+        </div>
+    </div>
+    <div class="category" style="height: 500px;">
+        <img src="Assets/images/investment.jpg" alt="Category Image">
+        <div class="category-info">
+            <a href="investment.html">
+                <h2>Investment</h2>
+            </a>
+            <p>Rk tech vision provide an Investment plan to users.</p>
+        </div>
+    </div>
+    <div class="category" style="height: 500px;">
+        <img src="Assets/images/quality assurance.jpg" alt="Category Image">
+        <div class="category-info">
+            <a href="quality.html">
+                <h2>Qulaity Assurance</h2>
+            </a>
+            <p>Rk tech vision provide quality assurance of work</p>
+        </div>
+    </div>
+    <div class="category" style="height: 500px;">
+        <img src="Assets/images/enterpreneur.jpg" alt="Category Image">
+        <div class="category-info">
+            <a href="enter.html">
+                <h2>Entrepreneur</h2>
+            </a>
+            <p>If you are an Entrepreneur you can connect with us.</p>
+        </div>
+    </div>
+    <div class="category" style="height: 500px;">
+        <img src="Assets/images/app marketing.jpg" alt="Category Image">
+        <div class="category-info">
+            <a href="appmarket.html">
+                <h2>APP Marketing</h2>
+            </a>
+            <p>RK TECH VISION provide app marketing services.</p>
+        </div>
+    </div>
+    <div class="category" style="height: 500px;">
+        <img src="Assets/images/app store.png" alt="Category Image">
+        <div class="category-info">
+            <a href="aso.html">
+                <h2>App store optimization</h2>
+            </a>
+            <p>Rk tech vision provide app store optimization service.</p>
+        </div>
+    </div>
+    <div class="bg-callout-wrapper">
+
+        <div class="bg-callout-container">
+            <div class="bg-callout-row">
+                <div class="bg-callout-card">
+                    <p class="bg-callout-card-heading title-xx-large-alt">FUTURE WITH RK TECH VISION IS BOOMING</p>
+                    <div class="bg-callout-card-description editor body-medium">
+                        <p>RK Tech vision a future where technology serves as a catalyst for positive transformation in
+                            businesses and society. Our vision is to provide innovative and comprehensive services that
+                            leverage cutting-edge technology to drive growth, efficiency, and sustainability.
+
+                            At RK Tech Vision, we are committed to delivering tailored solutions that meet the unique
+                            needs and challenges of our clients. Whether it's custom software development, web and
+                            mobile app development, UI/UX design, or strategic consulting, our services are designed to
+                            empower businesses to thrive in today's fast-paced and competitive landscape.</p>
+                        <p>We believe in the power of collaboration and partnership, which is why we offer brokerage
+                            services to connect businesses with the right resources, solutions, and opportunities. By
+                            fostering strategic alliances and facilitating meaningful connections, we aim to create a
+                            network of support that accelerates innovation and drives mutual success.
+
+                            In everything we do, RK Tech Vision is guided by a dedication to excellence, integrity, and
+                            social responsibility. Our vision is not only to provide top-notch services but also to make
+                            a positive impact on the world around us. Through our commitment to innovation,
+                            collaboration, and sustainability, we strive to create a brighter future for generations to
+                            come.
+
+                            Join us on this journey as we harness the power of technology to shape a better tomorrow for
+                            businesses, communities, and society as a whole.
+                        </p>
+                    </div>
+                    <a class="button" href="https://rktechvision.com/index.html">
+                        <span class="button-label">Read more here</span>
+                        <span class="button-effect"></span>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="alternating-wrapper">
+        <div class="alternating-container">
+            <div class="alternating-row">
+                <div class="alternating-media">
+                    <div class="alternating-media--inner">
+                        <div class="media media-image ratio-4x3">
+                            <div class="media-asset">
+                                <img title="RK VISION" class="media-object lazyload"
+                                    src="Assets/images/web-design-technology-browsing-programming-concept.jpg"
+                                    data-sizes="auto" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="alternating-body">
+                    <div class="alternating-body--inner">
+                        <h6 class="alternating-heading title-xx-large-alt">Web Development.</h6>
+                        <h2 class="alternating-subheading subtitle-x-large">Find your perfect Website.</h2>
+                        <div class="alternating-description editor">
+                            <p>Rk Tech Vision developed fully customized website according to your requirements</p>
+                        </div>
+                        <a class="button" style="margin-top: 10px;" href="web.html">
+                            <span class="button-label">Read more here</span>
+                            <span class="button-effect"></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="alternating-stripes">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="alternating-wrapper">
+        <div class="alternating-container">
+            <div class="alternating-row">
+                <div class="alternating-media">
+                    <div class="alternating-media--inner">
+                        <div class="media media-image ratio-4x3">
+                            <div class="media-asset">
+                                <img title="RK VISION" class="media-object lazyload"
+                                    src="Assets/images/ai-chip-artificial-intelligence-future-technology-innovation.jpg"
+                                    data-sizes="auto" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="alternating-body">
+                    <div class="alternating-body--inner">
+                        <h6 class="alternating-heading title-xx-large-alt">Artificial Intelligence</h6>
+                        <h2 class="alternating-subheading subtitle-x-large">your AI projects are here!</h2>
+                        <div class="alternating-description editor">
+                            <p>Rk Tech Vision make your all types of artificial Intelligence projects with quality work.
+                            </p>
+                        </div>
+                        <a class="button" style="margin-top: 10px;" href="artificial.html">
+                            <span class="button-label">Read more here</span>
+                            <span class="button-effect"></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="alternating-stripes">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="alternating-wrapper">
+        <div class="alternating-container">
+            <div class="alternating-row">
+                <div class="alternating-media">
+                    <div class="alternating-media--inner">
+                        <div class="media media-image ratio-4x3">
+                            <div class="media-asset">
+                                <img title="RK VISION" class="media-object lazyload"
+                                    src="Assets/images/showing-cart-trolley-shopping-online-sign-graphic.jpg"
+                                    data-sizes="auto" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="alternating-body">
+                    <div class="alternating-body--inner">
+                        <h6 class="alternating-heading title-xx-large-alt">E-Commerce</h6>
+                        <h2 class="alternating-subheading subtitle-x-large">E-commerce services.</h2>
+                        <div class="alternating-description editor">
+                            <p>Rk Tech Vision also provide the E-Commerce services to clients to grow their Busniess.
+                            </p>
+                        </div>
+                        <a class="button" style="margin-top: 10px;" href="commerce.html">
+                            <span class="button-label">Read more here</span>
+                            <span class="button-effect"></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="alternating-stripes">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="alternating-wrapper">
+        <div class="alternating-container">
+            <div class="alternating-row">
+                <div class="alternating-media">
+                    <div class="alternating-media--inner">
+                        <div class="media media-image ratio-4x3">
+                            <div class="media-asset">
+                                <img title="RK VISION" class="media-object lazyload"
+                                    src="Assets/images/social-media-marketing-concept-marketing-with-applications.jpg"
+                                    data-sizes="auto" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="alternating-body">
+                    <div class="alternating-body--inner">
+                        <h6 class="alternating-heading title-xx-large-alt">Digital Marketing</h6>
+                        <h2 class="alternating-subheading subtitle-x-large">Digital Marketing Services.</h2>
+                        <div class="alternating-description editor">
+                            <p>Rk Tech Vision provide all types of Digital Marketing services.</p>
+                        </div>
+                        <a class="button" style="margin-top: 10px;" href="digital.html">
+                            <span class="button-label">Read more here</span>
+                            <span class="button-effect"></span>
+                        </a>
+                    </div>
+
+
+                </div>
+                <div class="alternating-stripes">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-wrapper">
+        <div class="section-row section-row--grid">
+            <div class="grid cols-4" data-js>
+                <div class="grid__inner" data-js="slider-track">
+                    <div class="grid__tray" data-js="slider-tray">
+                        <article class="card card-layout--ttb card-CTA">
+                            <div class="card__inner">
+                                <div class="card__media">
+                                    <div class="media media-image ratio-16x9">
+                                        <div class="media-asset">
+                                            <img title="Unknown-3" class="media-object lazyload"
+                                                src="Assets/images/businessman-black-suit-smiling-positively.jpg"
+                                                data-sizes="auto" alt="" />
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="card__body">
+                                    <div class="card-line--1 card-text-title--md"><a href="" class="card__action">Josh
+                                            Lee</a>
+                                    </div>
+                                    <div class="card-line--2 card-text-body--md">
+                                        <p>Managing Director</p>
+                                    </div>
+                                    <button class="button card-line--3">
+                                        <span class="button-label">Contact Josh</span>
+                                        <span class="button-effect"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="card card-layout--ttb card-CTA">
+                            <div class="card__inner">
+                                <div class="card__media">
+                                    <div class="media media-image ratio-16x9">
+                                        <div class="media-asset">
+                                            <img title="Martin_USE-e1590642024155" class="media-object lazyload"
+                                                src="Assets/images/businessman-black-suit-smiling-positively.jpg"
+                                                data-sizes="auto" alt="" />
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="card__body">
+                                    <div class="card-line--1 card-text-title--md"><a href="" class="card__action">Martin
+                                            Holmes</a>
+                                    </div>
+                                    <div class="card-line--2 card-text-body--md">
+                                        <p>Web Developer</p>
+                                    </div>
+                                    <button class="button card-line--3">
+                                        <span class="button-label">Contact Martin</span>
+                                        <span class="button-effect"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="card card-layout--ttb card-CTA">
+                            <div class="card__inner">
+                                <div class="card__media">
+                                    <div class="media media-image ratio-16x9">
+                                        <div class="media-asset">
+                                            <img title="Lies" class="media-object lazyload"
+                                                src="Assets/images/businessman-black-suit-smiling-positively.jpg"
+                                                data-sizes="auto" alt="" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card__body">
+                                    <div class="card-line--1 card-text-title--md"><a href="" class="card__action">Lies
+                                            Sol</a>
+                                    </div>
+                                    <div class="card-line--2 card-text-body--md">
+                                        <p> Andriod Developer</p>
+                                    </div>
+                                    <button class="button card-line--3">
+                                        <span class="button-label">Contact Lies</span>
+                                        <span class="button-effect"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="card card-layout--ttb card-CTA">
+                            <div class="card__inner">
+                                <div class="card__media">
+                                    <div class="media media-image ratio-16x9">
+                                        <div class="media-asset">
+                                            <img title="T-Profile" class="media-object lazyload"
+                                                src="Assets/images/businessman-black-suit-smiling-positively.jpg"
+                                                data-sizes="auto" alt="" />
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="card__body">
+                                    <div class="card-line--1 card-text-title--md"><a href="/"
+                                            class="card__action">Thirawat Kaeokaemchan</a>
+                                    </div>
+                                    <div class="card-line--2 card-text-body--md">
+                                        <p>Marketing Manager</p>
+                                    </div>
+                                    <button class="button card-line--3">
+                                        <span class="button-label">Contact Thirawat</span>
+                                        <span class="button-effect"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div data-js="partner-logos" class="logos-wrapper">
+        <div class="logos-container">
+            <ul class="logos-grid">
+                <li class="logos-item">
+                    <a href="" title="NetJets">
+                        <img class="logos-item--img lazyload" src="Assets/images/elixir.png" alt="NetJets" />
+                    </a>
+                </li>
+                <li class="logos-item">
+                    <a href="/" title="IGY Marinas">
+                        <img class="logos-item--img lazyload" src="Assets/images/afiniti.png" alt="NetJets" />
+                    </a>
+                </li>
+                <li class="logos-item">
+                    <a href="/" title="Northern Trust">
+                        <img class="logos-item--img lazyload" src="Assets/images/hello.jpg" alt="NetJets" />
+                    </a>
+                </li>
+                <li class="logos-item">
+                    <a href="/" title="Northern Trust">
+                        <img class="logos-item--img lazyload" src="Assets/images/netsol.jpg" alt="NetJets" />
+                    </a>
+                </li>
+                <li class="logos-item">
+                    <a href="/" title="Northern Trust">
+                        <img class="logos-item--img lazyload" src="Assets/images/arbisoft.png" alt="NetJets" />
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-wrapper" data-js="footer">
+        <div class="footer-container">
+            <div class="footer-row--primary">
+                <nav class="footer-nav">
+                    <ul id="menu-footer" class="menu">
+
+                        <li id="menu-item-507"
+                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-507">
+                            <a href="index.html">Home</a>
+                            <ul class="sub-menu">
+                                <li id="menu-item-28042"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28042"><a
+                                        href="about.html">About</a></li>
+                                <li id="menu-item-512"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-512"><a
+                                        href="project.html">projects</a>
+                                </li>
+                                <li id="menu-item-511"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-511"><a
+                                        href="services.html">Services</a></li>
+                                <li id="menu-item-28040"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28040"><a
+                                        href="team.html">Team</a></li>
+                                <li id="menu-item-28041"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28041"><a
+                                        href="blog.html">Blog</a></li>
+                                <li id="menu-item-510"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-510"><a
+                                        href="testinomial.html">Testinomial</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li id="menu-item-513"
+                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-513">
+                            <a href="ser.html">Services</a>
+                            <ul class="sub-menu">
+                                <li id="menu-item-519"
+                                    class="menu-item menu-item-type-post_type menu-item-object-region menu-item-519"><a
+                                        href="android.html">App Development</a></li>
+                                <li id="menu-item-518"
+                                    class="menu-item menu-item-type-post_type menu-item-object-region menu-item-518"><a
+                                        href="ios.html">Ios Development</a></li>
+                                <li id="menu-item-28034"
+                                    class="menu-item menu-item-type-post_type menu-item-object-location menu-item-28034">
+                                    <a href="web.html">Web Development</a>
+                                </li>
+                                <li id="menu-item-28035"
+                                    class="menu-item menu-item-type-post_type menu-item-object-location menu-item-28035">
+                                    <a href="digital.html">Digital Marketing</a>
+                                </li>
+                                <li id="menu-item-28036"
+                                    class="menu-item menu-item-type-post_type menu-item-object-location menu-item-28036">
+                                    <a href="appmarket.html">App Marketing</a>
+                                </li>
+                                <li id="menu-item-28037"
+                                    class="menu-item menu-item-type-post_type menu-item-object-location menu-item-28037">
+                                    <a href="aso.html">ASO</a>
+                                </li>
+                                <li id="menu-item-28038"
+                                    class="menu-item menu-item-type-post_type menu-item-object-region menu-item-28038">
+                                    <a href="commerce.html">E-Commerce</a>
+                                </li>
+                                <li id="menu-item-28039"
+                                    class="menu-item menu-item-type-post_type menu-item-object-location menu-item-28039">
+                                    <a href="artificial.html">Artificial Intelligence</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="menu-item-520"
+                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-520">
+                            <a href="partnership.html">Partnership</a>
+                            <ul class="sub-menu">
+                                <li id="menu-item-525"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-525"><a
+                                        href="/">Netsole</a></li>
+                                <li id="menu-item-522"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-522"><a
+                                        href="/">Hello World</a></li>
+                                <li id="menu-item-523"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-523"><a
+                                        href="/">Elixer technologies</a></li>
+                                <li id="menu-item-524"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-524"><a
+                                        href="/">Arbisoft</a></li>
+                                <li id="menu-item-521"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-521"><a
+                                        href="/">afiniti</a></li>
+                            </ul>
+                        </li>
+                        <li id="menu-item-520"
+                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-520">
+                            <a href="partnership.html">Social Links</a>
+                            <ul class="sub-menu">
+                                <li id="menu-item-525"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-525"><a
+                                        href="/">Twitter</a></li>
+                                <li id="menu-item-522"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-522"><a
+                                        href="/">Skype</a></li>
+                                <li id="menu-item-523"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-523"><a
+                                        href="/">Instagram</a></li>
+                                <li id="menu-item-524"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-524"><a
+                                        href="/">YouTube</a></li>
+                                <li id="menu-item-521"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-521"><a
+                                        href="/">Facebook</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+
+                <nav class="footer-locations">
+
+                    <ul>
+                        <li>
+                            <a href="contact.html">Contacts</a>
+
+                            <div class="footer-locations--table">
+                                <ul>
+                                    <li itemscope itemtype="">Adress :
+                                        <span><a href="/" itemprop="url"><span itemprop="name"><span
+                                                        style="display:none">head Office</a></span>
+                                        <ul>
+                                            <li>
+                                                <a href="/" rel="noopener"><span itemprop="telephone">H13,
+                                                        Islamabad</span></a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li itemscope itemtype="https://schema.org/LocalBusiness"> Contact:
+                                        <span><a href="/" itemprop="url"><span itemprop="name"><span
+                                                        style="display:none">Head office lahore</a></span>
+                                        <ul>
+                                            <li>
+                                                <a href="/" rel="noopener"><span itemprop="telephone">+92 0304
+                                                        007407</span></a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </li>
+
+                    </ul>
+                </nav>
+
+
+            </div>
+
+            <div class="footer-row--secondary">
+                <nav class="footer-social">
+                    <ul>
+                        <li>
+                            <a href=" https://www.instagram.com/rktechvision/" title="Instagram" target="_blank"
+                                rel="noopener">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12.534" height="12.531">
+                                    <path
+                                        d="M6.268 3.052a3.213 3.213 0 1 0 3.213 3.21 3.208 3.208 0 0 0-3.213-3.21Zm0 5.3a2.089 2.089 0 1 1 2.089-2.09 2.093 2.093 0 0 1-2.089 2.089Zm4.094-5.433a.749.749 0 1 1-.749-.749.748.748 0 0 1 .749.751Zm2.128.761a3.708 3.708 0 0 0-1.012-2.626A3.733 3.733 0 0 0 8.852.044c-1.035-.059-4.136-.059-5.17 0a3.727 3.727 0 0 0-2.626 1.009A3.721 3.721 0 0 0 .044 3.679c-.059 1.035-.059 4.136 0 5.17a3.708 3.708 0 0 0 1.012 2.626 3.738 3.738 0 0 0 2.626 1.012c1.035.059 4.136.059 5.17 0a3.708 3.708 0 0 0 2.626-1.012 3.733 3.733 0 0 0 1.012-2.626c.059-1.035.059-4.133 0-5.167Zm-1.337 6.282a2.115 2.115 0 0 1-1.191 1.191 13.81 13.81 0 0 1-3.694.252 13.918 13.918 0 0 1-3.694-.252 2.115 2.115 0 0 1-1.191-1.191 13.81 13.81 0 0 1-.252-3.7 13.918 13.918 0 0 1 .252-3.694A2.115 2.115 0 0 1 2.574 1.38a13.81 13.81 0 0 1 3.694-.252 13.918 13.918 0 0 1 3.694.252 2.115 2.115 0 0 1 1.191 1.191 13.81 13.81 0 0 1 .252 3.691 13.8 13.8 0 0 1-.252 3.7Z" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" title="LinkedIn" target="_blank" rel="noopener">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="11.959" height="11.431">
+                                    <path
+                                        d="M2.715 11.431H.151V3.718h2.564ZM1.433 2.665h-.017A1.336 1.336 0 1 1 1.45 0a1.337 1.337 0 1 1-.017 2.665Zm10.526 8.766H9.395V7.305c0-1.037-.371-1.744-1.3-1.744a1.4 1.4 0 0 0-1.315.938 1.756 1.756 0 0 0-.084.626v4.307H4.134s.034-6.989 0-7.713h2.563V4.81a2.545 2.545 0 0 1 2.31-1.273c1.687 0 2.951 1.1 2.951 3.471Zm0 0" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/" title="Facebook" target="_blank" rel="noopener">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="6.421" height="11.876">
+                                    <path
+                                        d="M6.179 0h-1.54a2.7 2.7 0 0 0-2.848 2.923V4.27H.242A.242.242 0 0 0 0 4.512v1.953a.242.242 0 0 0 .242.242H1.79v4.927a.242.242 0 0 0 .242.242h2.02a.242.242 0 0 0 .242-.242V6.707h1.811a.242.242 0 0 0 .242-.242V4.513a.242.242 0 0 0-.242-.242h-1.81V3.128c0-.549.131-.828.846-.828h1.037a.242.242 0 0 0 .242-.242V.245A.242.242 0 0 0 6.179 0Z" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/channel/UCSrBcMpEYxyhzqXYJIpC52Q" title="YouTube"
+                                target="_blank" rel="noopener">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14.68" height="10.322">
+                                    <path
+                                        d="M14.373 1.615a1.845 1.845 0 0 0-1.3-1.306A43.59 43.59 0 0 0 7.34 0a43.59 43.59 0 0 0-5.735.309 1.845 1.845 0 0 0-1.3 1.306A19.35 19.35 0 0 0 0 5.171a19.35 19.35 0 0 0 .307 3.556 1.817 1.817 0 0 0 1.3 1.285 43.59 43.59 0 0 0 5.735.309 43.59 43.59 0 0 0 5.735-.309 1.817 1.817 0 0 0 1.3-1.285 19.35 19.35 0 0 0 .307-3.556 19.35 19.35 0 0 0-.307-3.556ZM5.838 7.354V2.989l3.837 2.183-3.837 2.182Z" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/RkTechVision" title="Twitter" target="_blank" rel="noopener">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12">
+                                    <path
+                                        d="m5.692 6.731-.475-.664L1.44.78h1.626l3.048 4.266.475.664 3.962 5.545H8.925ZM10.55 0 6.671 4.412 3.573 0H0l4.685 6.672L0 12h1.059l4.1-4.659L8.427 12H12L7.141 5.081 11.609 0Z" />
+                                </svg>
+                            </a>
+                        </li>
+
+                    </ul>
+                </nav>
+
+                <div class="footer-meta">
+                    <p class="footer-copyright">&copy; 2024 RK Tech Vision</p>
+
+                    <nav class="footer-legal">
+                        <ul>
+                            <li>
+                                <a href="/">Press</a>
+                            </li>
+                            <li>
+                                <a href="/">Privacy</a>
+                            </li>
+                            <li>
+                                <a href="/">Terms</a>
+                            </li>
+                            <li>
+                                <a href="/">Disclaimer</a>
+                            </li>
+                            <li>
+                                <a href="/">Sitemap</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script>
+        (() => {
+            const setViewport = () => {
+                const vh = window.innerHeight * 0.01;
+                document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+                const sbw = document.body ? window.innerWidth - document.body.clientWidth : 0;
+                document.documentElement.style.setProperty('--sbw', `${sbw}px`);
+            };
+
+            setViewport();
+            window.addEventListener('resize', setViewport, true);
+        })();
+    </script>
+
+    </script>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MNCCWTG" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End: Google Tag Manager (noscript) -->
+</body>
+
+</html>
+
+<!-- plugin=object-cache-pro client=phpredis metric#hits=6911 metric#misses=260 metric#hit-ratio=96.4 metric#bytes=12417369 metric#prefetches=0 metric#store-reads=662 metric#store-writes=23 metric#store-hits=683 metric#store-misses=256 metric#sql-queries=33 metric#ms-total=989.95 metric#ms-cache=191.42 metric#ms-cache-avg=0.2799 metric#ms-cache-ratio=19.3 -->
